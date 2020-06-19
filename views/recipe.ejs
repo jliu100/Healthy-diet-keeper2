@@ -1,0 +1,21 @@
+<% include ./partials/header %> 
+	<h1></h1>
+	<h1>This is recipe page:</h1>
+	
+<div class="row">
+	<% data.results.forEach(function(el){ %>
+		<div class="col col-md-3" style="text-align: center;">
+			<h2 style=" font-size: 12px"><%=el.title%></h2>
+			<img width=" 200" src="https://spoonacular.com/recipeImages/<%=el.id%>-556x370.jpg"  alt="Food image ">
+			<br>
+			<a href="/<%= el.title %>/<%= el.id %>/<%=user._id%>" >Read More</a> 
+		</div>
+		
+	<% }) %>
+</div>
+
+
+
+
+<% include ./partials/footer %>
+

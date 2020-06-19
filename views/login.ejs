@@ -1,0 +1,159 @@
+<!-- <h1>Login Page</h1> -->
+
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>Healthy Diet Plans</title>
+      <style>
+          /* Style all font awesome icons */
+        .fa {
+          
+          font-size: 50px;
+          width: 40px;
+          text-align: center;
+       
+          text-decoration: none;
+        }
+        body{
+            /*background-color: #F3F3F3;*/
+            margin: 0;
+            padding: 0;
+            font-family: "Open Sans", "Helvetica Neue", sans-serif;
+            background-image: url("https://images.unsplash.com/photo-1498837167922-ddd27525d352?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60");
+            background-repeat: no-repeat;
+            background-size: cover;
+          }
+        #box {
+        
+        width: 410px;
+        height: 340px;
+        position:fixed;
+        padding: 50px;
+        top:50%;
+        left:50%;
+        transform: translate(-50%,-50%);
+        background-color: #fff;
+        border-radius: 4em;
+    }
+    a:link, a:visited {
+        color: #38488f;
+        text-decoration: none;
+    }
+        a:hover{
+            text-decoration: underline;
+        }
+    @media (max-width: 500px) {
+        body {
+            background-color: #fff;
+        }
+        #box {
+            width: auto;
+            margin: 0 auto;
+            border-radius: 0;
+            padding: 1em;
+            top:50%;
+        }
+        #space{
+            position: relative;
+            margin-left:10px;
+        }
+        .centeredText{
+                text-align: center;
+        }
+    }
+        input {
+                padding: 5px 5px 10px 5px;
+                font-size: 14px;
+                border-radius: 5px;
+                border: 1px solid grey;
+                width:300px;
+                }
+            
+        label {
+            position: relative;
+            top:12px;
+            font-size: 16px;
+            width:100px;
+            float: left;  
+            }
+            
+        .form-element{
+            margin-bottom: 10px;
+        }
+            
+        #submitButton{
+            width: 120px;
+        }
+        a {
+            margin-right:10px;
+            margin-left:5px;
+        }
+        .links{
+            position: relative;
+            top: -10px;
+        }
+        .other-content{
+            text-align: center;
+            width:227px;
+            display:flex;
+            flex-direction: column;
+            position:absolute;
+            margin-left:45px;
+        }
+         #errorMessage{
+            color: red;
+            font-size: 80% !important;
+
+        }  
+
+      </style>
+  </head>
+  <body>
+    <nav class="navbar fixed-top navbar-expand-lg navbar-light" style="background-color: #AFDAE4;">
+      <a class="navbar-brand nav-link disabled" href="#">Healthy Diet Plans</a>
+     
+    </nav>
+   	<form action="/user" method="POST"> 
+	     <div id="box">
+	        <center><i class="fa fa-user-circle" aria-hidden="true"></i></center>
+	          <div id =errorMessage>
+                    <% if(checkLogin==="1") { %>
+                        <h8>Woopps!! Wrong Pass word or Wrong User Name!!!</h8>
+                    <% } %>
+              </div>
+	          <div class ="form-element">
+	                <label for="userName"> Username</label>
+	                <input type="text" name="userName" id="userName" required>
+	            </div>
+
+
+	        <div class ="form-element">
+	                <label for="password">Password</label>
+	                <input type="password" name="password" id="password" required>
+	            </div>
+	         
+	        <div class="other-content">
+	            <div>
+	                <p> <button type="submit" id="submitButton" class="btn btn-primary"value="Login">Login</button> </a></p>
+	            </div>
+	        
+	            <div class="links">
+                    
+	                <a href="/eatHealthy/signUp" > New User </a> 
+	                <a href="/forgotPassword" > Forgot Password</a> 
+	            </div>
+	         </div>
+	        
+	    </div>
+    </form> 
+    
+    
+  </body>
+</html>

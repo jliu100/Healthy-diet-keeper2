@@ -1,0 +1,57 @@
+
+   <html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+    <link rel="stylesheet" type="text/css" href="/stylesheets/HomePage.css">
+
+   <!--  Semantic ui -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"> 
+    <title>Healthy Diet Keeper</title>
+      
+  </head>
+  <body>
+     <nav class="navbar fixed-top navbar-expand-lg navbar-light" style="background-color: #AFDAE4;">
+      <a class="navbar-brand navSpace" href="/user/<%= user._id%>/home" >Healthy Diet Keeper</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/user/<%= user._id%>/weightGraph">My Weight Graph</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="/user/<%=user._id%>/reciSearch">Search Recipies</a>
+          </li> 
+          <li class="nav-item">
+            <a class="nav-link" href="/user/<%= user._id%>/MyDietPlan">My Diet Plan</a>
+          </li> 
+          
+        </ul>
+      
+        <ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
+            <li class="nav-item dropdown">
+                <a class="nav-link " href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fa fa-user-circle move-left" aria-hidden="true"></i>
+                </a>
+                <div style="left:-85px" class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <div id="move"> 
+                        <a class="dropdown-item " href="/">Sign out</a>
+                    </div>
+                </div>
+            </li>  
+        </ul>
+      </div>
+    </nav>
+      
+    
+    

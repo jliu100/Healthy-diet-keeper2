@@ -1,0 +1,10 @@
+.week {
+  /*position: fixed;*/
+  top: 100px;
+  height:300px;
+  width:100%;
+
+}
+td{
+	align-content: center;
+}

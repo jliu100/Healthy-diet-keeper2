@@ -1,0 +1,164 @@
+<!-- <h1>Sign Up page</h1> -->
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>Healthy Diet Plans</title>
+      <style type="text/css">
+          /* Style all font awesome icons */
+        body{
+            background-color: #F3F3F3;
+            margin: 0;
+            padding: 0;
+            font-family: "Open Sans", "Helvetica Neue", sans-serif;
+            background-image: url("https://images.unsplash.com/photo-1498837167922-ddd27525d352?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60");
+            background-repeat: no-repeat;
+            background-size: cover;
+          }
+        #box {
+            width: 510px;
+            height: 450px;
+            position:fixed;
+            padding: 50px;
+            top:50%;
+            left:50%;
+            transform: translate(-50%,-50%);
+            background-color: #fff;
+            border-radius: 4em;
+        }
+        a:link, a:visited {
+            color: #38488f;
+            text-decoration: none;
+        }
+        a:hover{
+            text-decoration: underline;
+        }
+    @media (max-width: 500px) {
+        body {
+            background-color: #fff;
+        }
+        #box {
+            top:50%;
+            width: auto;
+            margin: 0 auto;
+            border-radius: 0;
+            padding: 1em;
+        }
+        .stay{
+            float:right;
+        }
+        #space{
+            position: relative;
+            margin-left:10px;
+        }
+    }
+        input {
+                padding: 7px;
+                font-size: 14px;
+                border-radius: 5px;
+                border: 1px solid grey;
+                width:300px;
+                }
+            
+        label {
+            position: relative;
+            top:5px;
+            font-size: 16px;
+            width:100px;
+            float: left;  
+            }
+           
+            
+        .form-element{
+            margin-bottom: 12px;
+        }
+            
+        #submitButton{
+            margin-left: 50px;
+            width: 110px;
+          
+            }
+        #up{
+            position: relative;
+            top: -65px !important;
+        }
+        #errorMessage{
+            color: red;
+            font-size: 80% !important;
+
+        }  
+        #successMessage{
+                color: green;
+                font-size: 80% !important;
+                display: none;
+                margin-bottom: 20px;
+            }
+
+
+      </style>
+  </head>
+  <body>
+    <nav class="navbar fixed-top navbar-expand-lg navbar-light" style="background-color: #AFDAE4;">
+      <a class="navbar-brand nav-link disabled" href="#">Healthy Diet Plans</a>
+     
+    </nav>
+
+
+    <form action="/home" method="POST">
+
+        
+         <div id="box">
+             <div id= "errorMessage">
+                 <% if(userNaR==="1"&&EmailR==="1"){ %>
+                    <h6>There is existing user Name and existing email!!!</h6>
+                 <% }else if (userNaR==="1"){ %>
+                    <h6>There is existing user Name!!!</h6>
+                <% } else if (EmailR==="1") { %>
+                    <h6>There is Existing Email!!!</h6>
+                <% } %>
+             </div>
+             <div class =" stay form-element">
+                <p>Please select your gender:</p>
+                <input id="male1" type="radio" name="user[gender]" value="male"> Male<br>  
+                <input id="female1" type="radio" name="user[gender]"  value="female">Female<br>
+                <input id="other1" type="radio" name="user[gender]"  value="other">Other<br>
+             </div>
+    
+
+            <div class ="form-element">
+                <label for="userName"> Username</label>
+                <input type="text" name="user[userName]"  id="userName" placeholder="john.doe" required>
+             </div>
+
+             <div class ="form-element">
+                <label for="email"> Email</label>
+                <input type="email" name="user[email]" id="email" placeholder="yourname@gmail.com" required>
+                
+             </div>
+
+             <div class ="form-element">
+                <label for="password">Password</label>
+                <input type="password" name="user[passWord]" id="password" placeholder="password" required> 
+             </div>
+
+             <div class ="form-element">
+                <label for="passwordConfirm">Confirm Password</label>
+                <input type="password" name="passwordConfirm" id=passwordConfirm placeholder="Confirm password" required>
+             </div>
+             
+            <p><button type="submit" class="btn btn-primary" id="submitButton">Sign up</button></p>   
+
+        </div>
+    </form>
+
+    
+
+     
+  </body>
+</html>

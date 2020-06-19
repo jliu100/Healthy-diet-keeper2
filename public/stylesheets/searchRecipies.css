@@ -1,0 +1,32 @@
+label{
+    display: inline-block;
+    padding: 0 10px;
+    vertical-align: middle;
+    float: left;
+}
+
+
+input{
+    outline: none;
+    border: 1px solid rgb(216, 216, 216);
+    padding: 2px 10px 2px 10px;
+    float: right;
+    width: 50%
+}
+
+.sub {
+  float: right;
+   
+  color: #fff;
+  background-color: #78C2AD;
+  border-color: #78C2AD;
+}
+h6{
+  float: right;
+  width: 500;
+}
+body{
+  background-image: url("https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQqXVAgpG1Atd_dAQdwUrESmU4PkO4shWkK3R9dHtKXHzyVMcEpV16eku8MsVekAOnng5Ig-qSlVhL-yNyzUu09Z8NcPNg0BvQ4CCv-B1LdY35bDAgowHpOQA&usqp=CAc");
+  background-repeat: no-repeat;
+  background-size: cover;
+}

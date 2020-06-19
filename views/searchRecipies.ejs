@@ -1,0 +1,69 @@
+<% include ./partials/header %> 
+ <link rel="stylesheet" type="text/css" href="/stylesheets/searchRecipies.css">
+<div class="form-control">
+		<form style="padding-top: 100px;" action="/user/<%=user._id%>/recipies" method="POST">
+
+			<section class='mincal'>
+				<label for='mincal'>Minimum Calories  </label>
+				<input type='number' name='mincal' id='mincal' placeholder="Enter Calories" required>
+				<h6> The minimum number of calories the recipe must have. </h6>
+				</br></br></br>
+				
+			</section>
+
+			<section class='ex_ingredient'>
+				<label for='ex_ingredient'>Exclude Ingredient </label>
+				<input type='text' name="ex_ingredient" id='ex_ingredient' placeholder="Enter Exclude Ingredient" required>
+				<h6>An comma-separated list of ingredients that must not be contained in the recipes. </h6>
+				</br></br></br></br>
+			</section>
+
+			<section class='intolerance'>
+				<label for='mincal'>Intolerances </label>
+				<input type='text' name='intolerance' id='intolerance' placeholder="Enter Intolerance" required>
+				<br></br>
+				<h6> A comma-separated list of intolerances. All found recipes must not have ingredients that could cause problems for people with one of the given tolerances. Possible values are: dairy, egg, gluten, peanut, sesame, seafood, shellfish, soy, sulfite, tree nut, and wheat.</h6>
+				</br></br></br></br>
+			</section>
+
+	  		<section class='number'>
+				<label for='num'>Number </label>
+				<input type='number' name='num' id='num' placeholder="Enter Number" required>	
+				<br></br>
+				<h6>The number of results to return (between 1 and 100). </h6>
+				</br></br></br>
+			</section>
+
+			<section class='maxcal'>
+				<label for='maxcal'>Maximum Calories  </label>
+				<input type='number' name='maxcal' id='maxcal' placeholder="Enter Maximum Calories" required>
+
+				<h6>The maximum number of calories the recipe can have. </h6>
+				</br></br></br>
+			</section>
+
+			<section class='cuisine'>
+				<label for='cuisine'>Cuisine  </label>
+				<input type='text' name='cuisine' id='cuisine' placeholder="Enter Cuisine" required><br/><br/>
+				<h6> The cuisine(s) of the recipes. One or more (comma separated) of the following: african, chinese, japanese, korean, vietnamese, thai, indian, british, irish, french, italian, mexican, spanish, middle eastern, jewish, american, cajun, southern, greek, german, nordic, eastern european, caribbean, or latin american.</h6>
+				<br/><br/><br/><br/></br>
+			</section>
+
+			
+
+			<section class='type1'>
+				<label for='type1'>Type  </label>
+				<input type='text' name='type1' id='type1' placeholder="Enter Type" required><br/><br/>
+				<h6> The type of the recipes. One of the following: main course, side dish, dessert, appetizer, salad, bread, breakfast, soup, beverage, sauce, or drink. </h6>
+				<br/><br/>
+			</section>
+			<br>
+			<section class="submission">
+	          
+	            <button type="submit" class="btn btn-primary sub">Search</button>
+	         </section>
+
+   			<br><br>
+		</form>
+	</div>
+<% include ./partials/footer %>

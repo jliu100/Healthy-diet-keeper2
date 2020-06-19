@@ -1,0 +1,15 @@
+.inline{
+	display:inline;
+}
+.move{
+	position: relative;
+	left: 320px;
+}
+.bu{
+	position: relative;
+	left: 200px;
+}
+.delete{
+	position: relative;
+	left: 125px;
+}

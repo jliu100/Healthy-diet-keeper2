@@ -1,0 +1,52 @@
+<% include ./partials/headerForweight %> 
+<style>
+	body{
+		background-image: url("https://i.pinimg.com/originals/3f/6a/b7/3f6ab7764a574917963fa17e46876a8e.jpg");
+	            background-repeat: no-repeat;
+	            background-size: cover;
+	}
+</style>
+<link rel="stylesheet" type="text/css" href="/stylesheets/showMore_Selected_Reci_Info.css">
+
+	
+	<div class="move">
+
+		<form action="/users/<%= user._id %>/editWeight?_method=PUT" method="POST">
+			
+			<div class="inline ">
+			   <label> Weight</label>
+			   <input type="text" name="weight"  placeholder="124" required>
+			</div>
+
+			<div class="inline">
+			    <label> Date</label>
+			    <input type="text" name="date" placeholder="12-12-2012" required>
+			</div>
+			<br>
+
+			<button class="bu">Add</button>	
+
+			<div id="chart" align="center"></div>
+
+		</form>
+
+		<form action="/users/<%= user._id %>/deleteWeight?_method=PUT" method="POST">
+			<button class="delete">Delete Last Updated Weight</button>
+		</form>
+	</div>
+
+
+<% var date=""%>
+<% var weight=""%>
+<% user.weightArr.forEach(function(el){ %>
+	<% date+=el.date+",";%>
+	<% weight+=el.weight+",";%>
+<% }) %>
+
+
+
+<script src="/script/pracWeight.js" id="searcher" data-date = <%= date %> data-weight = <%= weight %>  </script>
+
+
+
+<% include ./partials/footer %>

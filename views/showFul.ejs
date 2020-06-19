@@ -1,0 +1,37 @@
+
+<div class="description">
+	<p>userName: <%= user.userName %></p>
+	<p>Email: <%= user.email %></p>  
+	
+	<h2>weightArr: <%=user.weightArr%></h2>
+	<h2>Created Date: <%=user.date%></h2>
+	
+	
+	<p>Gender: <%= user.gender %></p>
+	<p>Age: <%= user.age %></p>
+	<p>height: <%= user.height %></p>  
+	<p>currentWeight: <%= user.currentWeight %></p>  
+	<p>active: <%=user.active%></p>
+
+	<p>goalLose: <%= user.goalLose %></p>
+	<p>timeAchieve: <%= user.timeAchieve%></p>  
+	<p>caloriesPerDay: <%= user.caloriesPerDay %></p>  
+
+	<h2>recepies: <%=user.recepies%></h2>  
+
+	<h2>data: <%=user.recepies[0].breakFast[1]%></h2>
+	<h2><%=typeof(user.recepies[0].breakFast[1])%></h2> 
+	<%var copy=user.recepies[0].breakFast[1];%>
+
+	<!-- <%user.recepies[0].breakFast.push("77")%>
+    <%user.recepies[0].breakFast.pop()%>
+    <%user.save()%> -->
+
+	
+
+</div>	
+
+<form  action="/users/<%=user._id %>?_method=DELETE" method="POST">  <!-- for delete post, use override method similar to want we do for edit post, and go to specific route in app.js that has delete method and has same route name -->
+	<button class="ui red button">Delete</button>
+</form>
+

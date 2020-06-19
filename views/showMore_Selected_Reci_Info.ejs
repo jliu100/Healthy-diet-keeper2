@@ -1,0 +1,88 @@
+<% include ./partials/header %>
+<link rel="stylesheet" type="text/css" href="/stylesheets/showMore_Selected_Reci_Info.css">
+
+	<h1></h1>
+	<div>
+		<!-- // foodId,data,foodName,calories -->
+		<h2>Day: <%=Number(day)+1%>,  <%=eatTime%></h2>
+	</div>
+
+	<div>
+		<div class="ui main text container segment">  <!-- use ui: to change location of this container-->
+		<div class="ui huge header"> 
+			<%if(eatTime ==="breakfast"){%>
+		 	  <%=user.recepies[day].breakFast[2]%>
+		 	<%}else if(eatTime==="lunch") {%>
+              <%=user.recepies[day].lunch[2]%>
+            <%}else{%>
+              <%=user.recepies[day].dinner[2]%>
+            <%}%>
+		</div> <!-- big header -->
+
+		<div class="ui top attached"> 
+			<div class="item"></div>
+				<%if(eatTime ==="breakfast"){%>
+				  <h4>Calories: <%=user.recepies[day].breakFast[3]%></h4>
+			 	  <%var imgURL="https://spoonacular.com/recipeImages/";%>
+	              <%imgURL=imgURL+ user.recepies[day].breakFast[0];%>
+	              <%imgURL=imgURL+"-556x370.jpg";%>
+	              <img class="ui centered image" src=<%=imgURL%>  alt="Food image ">
+	              <div class="content" style="text-align: center;">
+					<h1>Ingredients:</h1>
+					<%var data=user.recepies[day].breakFast[1];%>
+					<%showIngredients(data);%>	
+				  </div>
+			 	<%}else if(eatTime==="lunch") {%>
+			 	  <h4>Calories: <%=user.recepies[day].lunch[3]%></h4>
+	              <%var imgURL="https://spoonacular.com/recipeImages/";%>
+	              <%imgURL=imgURL+ user.recepies[day].lunch[0];%>
+	              <%imgURL=imgURL+"-556x370.jpg";%>
+	              <img class="ui centered image" src=<%=imgURL%>  alt="Food image ">
+	              <div class="content" style="text-align: center;">
+					<h1>Ingredients:</h1>
+					<%var data=user.recepies[day].lunch[1];%>
+					<%showIngredients(data);%>	
+				  </div>
+	            <%}else{%>
+	              <h4>Calories: <%=user.recepies[day].dinner[3]%></h4>
+	              <%var imgURL="https://spoonacular.com/recipeImages/";%>
+	              <%imgURL=imgURL+ user.recepies[day].dinner[0];%>
+	              <%imgURL=imgURL+"-556x370.jpg";%>
+	              <img class="ui centered image" src=<%=imgURL%>  alt="Food image ">
+	              <div class="content" style="text-align: center;">
+					<h1 >Ingredients:</h1>
+					<%var data=user.recepies[day].dinner[1];%>
+					<%showIngredients(data);%>	
+				  </div>
+	            <%}%>
+
+				<form action="/user/<%= user._id %>/<%=day%>/<%=eatTime%>/deleteRecipe?_method=PUT" Method="POST">
+					<button class="ui red button" >Delete</button>
+				</form>
+				
+		</div>
+	</div>
+
+
+	
+	<%function showIngredients(data){%>
+		<%while(data.indexOf(',')!==-1){%>
+			<div>
+				<h5 class="inline" ><%=data.substring(0,data.indexOf(','));%>:</h5>
+				<%data=data.substring(data.indexOf(',')+1);%>
+
+				<%if(data.indexOf(',')===-1){%>
+					<h5 class="inline" ><%=data.substring(0);%>g</h5>
+				<%}else{%>
+					<h5 class="inline"><%=data.substring(0,data.indexOf(','));%>g</h5>
+					<%data=data.substring(data.indexOf(',')+1);%>
+				<%}%>
+			</div>
+
+		<%}%>
+	<%}%>
+
+	
+	
+<% include ./partials/footer %>
+

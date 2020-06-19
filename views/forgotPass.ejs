@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>Healthy Diet Plans</title>
+      <style>
+          /* Style all font awesome icons */
+        .fa {
+          
+          font-size: 50px;
+          width: 40px;
+          text-align: center;
+       
+          text-decoration: none;
+        }
+        body{
+            background-color: #EAE9E9;
+            margin: 0;
+            padding: 0;
+            font-family: "Open Sans", "Helvetica Neue", sans-serif;
+          }
+        #box {
+        
+        width: 410px;
+        height: 440px;
+        position:fixed;
+        padding: 50px;
+        top:50%;
+        left:50%;
+        transform: translate(-50%,-50%);
+        background-color: #fff;
+        border-radius: 4em;
+    }
+    a:link, a:visited {
+        color: #38488f;
+        text-decoration: none;
+    }
+        a:hover{
+            text-decoration: underline;
+        }
+    @media (max-width: 500px) {
+        body {
+            background-color: #fff;
+        }
+        #box {
+            width: auto;
+            margin: 0 auto;
+            border-radius: 0;
+            padding: 1em;
+            top:50%;
+        }
+        #space{
+            position: relative;
+            margin-left:10px;
+        }
+        .centeredText{
+                text-align: center;
+        }
+    }
+        input {
+                padding: 5px 5px 10px 5px;
+                font-size: 14px;
+                border-radius: 5px;
+                border: 1px solid grey;
+                width:300px;
+        }
+            
+        label {
+            
+            position: relative;
+            top:12px;
+            font-size: 16px;
+            width:200px;
+           margin-bottom: 20px;
+        }
+            
+        .form-element{
+            margin-bottom: 10px;
+        }
+            
+        #submitButton{
+            width: 120px;
+            margin-left: 90px;
+        }
+        #submitButton2{
+          width: 200px;
+           margin-left: 50px;
+        }
+        a {
+            margin-right:10px;
+            margin-left:5px;
+        }
+        
+       h5{
+            color: red;
+        }
+        
+          #lift-top{
+              position: relative;
+              top: -15px;
+          }
+
+        
+
+      </style>
+  </head>
+  <body>
+    <nav class="navbar fixed-top navbar-expand-lg navbar-light" style="background-color: #AFDAE4;">
+      <a class="navbar-brand nav-link disabled" href="#">Healthy Diet Plans</a>
+     
+    </nav>
+      
+     <div id="box">
+
+      <div id =errorEmail>
+          <% if(checkEmail==="1") { %>
+              <h5>Woopps!! Can not find the email!!!</h5>
+          <% } else if(checkEmail==="0"){%>
+              <h5>Password Changed!!!</h5>
+          <%}%>
+
+      </div>
+        
+         <h5> Forgot your Password?</h5>
+        <h6 style="color: gray">Please enter your email associated with your account</h6>
+        <form action="/changePass" method="POST" >
+          <div id="lift-top">
+              <label for="email"> Email:    </label>
+              <input type="text" name="email" id="email" placeholder="yourname@gmail.com" required>
+
+              <label for="changeP">Change Password To:</label>
+               <input type="text" name="changeP" id="changeP" required>
+
+          </div>
+      
+          <button type="submit" class="btn btn-primary" id="submitButton">Submit</button>
+
+        </form>
+        <br>
+        <form action="/eatHealthy/login" method="GET">
+          <button type="submit" class="btn btn-primary" id="submitButton2"> Back to Login Page</button>
+        </form>
+        
+            
+        
+    </div>
+    
+    
+  </body>
+</html>

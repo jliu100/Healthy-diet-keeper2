@@ -1,0 +1,6 @@
+
+/*Circle are black when hovered*/
+.myCircle:hover {
+    stroke: black;
+}
+

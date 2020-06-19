@@ -1,0 +1,9 @@
+<% users.forEach(function(user){ %>
+	<div>
+		<h2><%=user.userName%></h2>
+		<h2><%=user.email%></h2>
+		
+		<a href="/users/<%= user._id %>">Read More</a> 
+	</div>
+	
+<% }) %>
